@@ -56,3 +56,17 @@ Recommendation
 ├── factors
 ├── alternatives
 └── generatedAt
+
+
+## Task Lifecycle
+
+A task progresses through a controlled lifecycle.
+
+```text
+TODO
+ │
+ ▼
+IN_PROGRESS
+ │
+ ▼
+COMPLETED
