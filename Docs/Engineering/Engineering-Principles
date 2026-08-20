@@ -1,0 +1,59 @@
+# NEXUS — Engineering Principles
+
+## 1. Type Safety
+
+TypeScript is used across the application.
+
+---
+
+## 2. Domain First
+
+Business rules live in domain services rather than UI components.
+
+---
+
+## 3. Validation at Boundaries
+
+External input is validated before entering the domain.
+
+---
+
+## 4. AI Is Not the Source of Truth
+
+AI-generated information must be validated against application rules.
+
+---
+
+## 5. Database Integrity
+
+Database constraints should enforce important relationships.
+
+---
+
+## 6. Observable Intelligence
+
+AI and recommendation behavior should be measurable.
+
+---
+
+## 7. Test Critical Logic
+
+Scheduling, task transitions, recommendations, and AI tool execution should have automated tests.
+
+---
+
+## 8. Graceful Failure
+
+Failure of the AI service must not make the core productivity system unusable.
+
+---
+
+## 9. Security by Default
+
+Authorization and validation occur server-side.
+
+---
+
+## 10. Simplicity
+
+Complexity must be justified by a real product requirement.
