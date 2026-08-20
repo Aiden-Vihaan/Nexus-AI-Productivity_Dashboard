@@ -31,3 +31,28 @@ Task
 ├── createdAt
 ├── updatedAt
 └── completedAt
+
+TimeWindow
+├── start
+├── end
+├── duration
+├── availability
+├── context
+└── suitability
+
+ScheduledTask
+├── taskId
+├── start
+├── end
+├── status
+├── locked
+└── recommendationId
+
+Recommendation
+├── taskId
+├── proposedStart
+├── proposedEnd
+├── confidence
+├── factors
+├── alternatives
+└── generatedAt
