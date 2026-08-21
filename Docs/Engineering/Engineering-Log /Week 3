@@ -23,3 +23,69 @@ Database Design
 Repository Implementation
       ↓
 API Development
+
+---
+
+# 4. `docs/engineering/day-16-engineering-log.md`
+
+This is the **main daily engineering log**.
+
+```markdown
+# NEXUS — Day 16 Engineering Log
+
+## Objective
+
+Build the first deterministic scheduling engine capable of transforming tasks, dependencies, and constraints into ranked actionable recommendations.
+
+---
+
+# Problem
+
+At the end of Day 15, NEXUS could determine whether tasks were executable.
+
+However, the system still needed to answer:
+
+> Among all executable tasks, which one should the user prioritize?
+
+
+Day 16 introduces the scheduling decision layer.
+
+---
+
+# Implemented
+
+## Candidate Generation
+
+The scheduler identifies potentially actionable tasks and removes:
+
+- Completed tasks
+- Cancelled tasks
+- Archived tasks
+- Blocked tasks
+- Tasks violating hard constraints
+
+---
+
+## Constraint Evaluation
+
+The scheduling pipeline evaluates:
+
+- Dependency readiness
+- Deadline conditions
+- Availability
+- Capacity
+
+Hard constraints eliminate invalid candidates before scoring begins.
+
+---
+
+## Signal Calculation
+
+Eligible candidates receive normalized values for:
+
+```text
+Priority
+Goal Alignment
+Deadline Pressure
+Effort Fit
+Readiness
