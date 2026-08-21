@@ -169,3 +169,31 @@ Dependencies
 Constraints
 Temporal Availability
 Activity
+
+---
+
+# 6. `docs/engineering/day-19-engineering-log.md`
+
+This is the main Day 19 engineering log.
+
+```markdown
+# NEXUS — Day 19 Engineering Log
+
+## Objective
+
+Introduce the Behavioral Intelligence foundation by transforming historical activity into measurable, confidence-aware productivity signals.
+
+---
+
+# Problem
+
+By Day 18, NEXUS could construct a unified Context Snapshot.
+
+However, the system primarily represented the user's current state.
+
+It did not yet understand how the user tends to work over time.
+
+For intelligent personalization, NEXUS needs to distinguish between:
+
+```text
+Current Context
