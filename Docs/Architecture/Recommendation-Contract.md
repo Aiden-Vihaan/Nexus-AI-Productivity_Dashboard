@@ -2,22 +2,11 @@
 
 The Recommendation Contract defines the structured output produced by the scheduling engine.
 
-The scheduler must return structured data rather than directly generating natural-language recommendations.
-
-This separation allows the same recommendation data to be consumed by:
-
-- Web dashboard
-- Mobile application
-- Notification system
-- AI Context Engine
-- Analytics
-- Future integrations
+The contract separates recommendation logic from presentation and AI-generated communication.
 
 ---
 
 ## Recommendation Object
-
-Conceptual structure:
 
 ```json
 {
@@ -26,15 +15,16 @@ Conceptual structure:
   "score": 0.87,
   "status": "RECOMMENDED",
   "signals": {
-    "priority": 0.8,
-    "goalAlignment": 0.9,
+    "priority": 0.80,
+    "goalAlignment": 0.90,
     "deadlinePressure": 0.85,
-    "effortFit": 0.7
+    "effortFit": 0.70,
+    "readiness": 1.00
   },
   "reasons": [
+    "High strategic relevance",
     "Deadline approaching",
-    "Contributes to an active goal",
-    "Task is unblocked",
-    "Fits the current work window"
+    "Task is currently unblocked",
+    "Estimated effort fits the available window"
   ]
 }
