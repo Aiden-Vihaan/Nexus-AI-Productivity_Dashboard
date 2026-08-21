@@ -1,0 +1,31 @@
+{
+  "nodes": [
+    {
+      "id": "goal_1",
+      "type": "GOAL",
+      "label": "Launch NEXUS MVP"
+    },
+    {
+      "id": "project_1",
+      "type": "PROJECT",
+      "label": "Core Platform"
+    },
+    {
+      "id": "task_1",
+      "type": "TASK",
+      "label": "Implement authentication"
+    }
+  ],
+  "edges": [
+    {
+      "source": "goal_1",
+      "target": "project_1",
+      "type": "SUPPORTS"
+    },
+    {
+      "source": "project_1",
+      "target": "task_1",
+      "type": "CONTAINS"
+    }
+  ]
+}
