@@ -89,3 +89,35 @@ Goal Alignment
 Deadline Pressure
 Effort Fit
 Readiness
+
+---
+
+# 4. `docs/engineering/day-17-engineering-log.md`
+
+This is the main Day 17 log.
+
+```markdown
+# NEXUS — Day 17 Engineering Log
+
+## Objective
+
+Introduce temporal context into the NEXUS scheduling architecture.
+
+The objective is to allow scheduling decisions to account for the user's actual available time rather than relying exclusively on task priority and deadlines.
+
+---
+
+# Problem
+
+Day 16 introduced a deterministic scheduling engine.
+
+However, the scheduler could still recommend a task without fully understanding whether the task fits the user's current available time.
+
+Example:
+
+```text
+Current availability:
+30 minutes
+
+Recommended task:
+3 hours
