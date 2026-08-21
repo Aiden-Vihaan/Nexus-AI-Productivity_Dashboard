@@ -121,3 +121,51 @@ Current availability:
 
 Recommended task:
 3 hours
+
+---
+
+# 5. `docs/engineering/day-18-engineering-log.md`
+
+```markdown
+# NEXUS — Day 18 Engineering Log
+
+## Objective
+
+Build the Context Engine that aggregates task, project, goal, dependency, constraint, temporal, and activity information into a unified context representation.
+
+---
+
+# Problem
+
+By Day 17, NEXUS could understand:
+
+- Tasks
+- Dependencies
+- Constraints
+- Scheduling
+- Time availability
+
+However, these systems remained separate.
+
+The next architectural challenge is:
+
+> How can NEXUS provide one coherent representation of the user's current productivity state?
+
+Day 18 introduces the Context Engine.
+
+---
+
+# Implemented
+
+## Context Sources
+
+The Context Engine integrates information from:
+
+```text
+Tasks
+Projects
+Goals
+Dependencies
+Constraints
+Temporal Availability
+Activity
