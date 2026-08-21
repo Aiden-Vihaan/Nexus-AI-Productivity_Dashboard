@@ -1,0 +1,231 @@
+---
+
+# Day 8 — Motion & Task System Foundation
+
+```markdown
+# NEXUS — Day 8 Engineering Log
+
+## Objective
+
+Establish the motion system and initial task-management architecture.
+
+## Motion System
+
+Defined motion principles for:
+
+- Page transitions
+- Component entry
+- State changes
+- Feedback
+- Expansion
+- Loading states
+
+Motion is treated as functional communication rather than decoration.
+
+## Task System
+
+Defined the initial task lifecycle:
+
+```text
+TODO
+ ↓
+IN_PROGRESS
+ ↓
+COMPLETED
+
+
+---
+
+# Day 9 — Data & Persistence Foundation
+
+```markdown
+# NEXUS — Day 9 Engineering Log
+
+## Objective
+
+Establish persistent application data and database architecture.
+
+## Implemented
+
+- Database schema foundation
+- ORM configuration
+- Environment-based database connection
+- Initial models
+- Migration strategy
+- Repository boundaries
+
+## Data Principle
+
+Persistent state belongs in the database.
+
+Derived values should be calculated when practical rather than duplicated as mutable fields.
+
+## Initial Relationship Model
+
+```text
+User
+ ↓
+Projects
+ ↓
+Tasks
+
+
+---
+
+# Day 10 — API & Validation Layer
+
+```markdown
+# NEXUS — Day 10 Engineering Log
+
+## Objective
+
+Create the API foundation and establish consistent request validation.
+
+## Architecture
+
+```text
+HTTP Request
+ ↓
+Validation
+ ↓
+Application Service
+ ↓
+Domain Logic
+ ↓
+Repository
+ ↓
+Database
+
+
+---
+
+# Day 11 — Task Domain
+
+```markdown
+# NEXUS — Day 11 Engineering Log
+
+## Objective
+
+Transform tasks from simple database records into a proper domain model.
+
+## Task Domain
+
+A task represents an actionable unit of work.
+
+Core properties include:
+
+- Identity
+- Ownership
+- Title
+- Description
+- Status
+- Priority
+- Deadline
+- Estimated effort
+- Parent task
+- Project relationship
+- Goal relationship
+
+## Domain Rules
+
+Examples:
+
+```text
+Completed task cannot return to active state without explicit transition.
+
+Task must belong to the authenticated user.
+
+Parent-child relationships must be valid.
+
+Invalid task transitions must be rejected.
+
+
+---
+
+# Day 12 — Engineering Hardening
+
+```markdown
+# NEXUS — Day 12 Engineering Log
+
+## Objective
+
+Strengthen the existing foundation through testing, validation, error handling, and engineering quality controls.
+
+## Focus Areas
+
+- Domain testing
+- API testing
+- Validation testing
+- Error handling
+- Ownership checks
+- Database consistency
+- Build validation
+- Code quality
+
+## Testing Strategy
+
+```text
+Unit Tests
+    +
+Integration Tests
+    +
+API Tests
+    +
+Build Validation
+
+
+---
+
+# Day 13 — Task Intelligence Foundation
+
+```markdown
+# NEXUS — Day 13 Engineering Log
+
+## Objective
+
+Extend the task domain with the contextual information required for future productivity intelligence.
+
+## Implemented
+
+- Task metadata
+- Project relationships
+- Goal relationships
+- Task hierarchy
+- Estimated duration
+- Task activity
+- Task context
+- Derived task information
+
+## Task Context
+
+A task is no longer treated as an isolated record.
+
+```text
+Task
+ ↓
+Project
+ ↓
+Goal
+
+
+---
+
+# Day 14 — Planning Graph
+
+```markdown
+# NEXUS — Day 14 Engineering Log
+
+## Objective
+
+Transform the task-management system into a hierarchical planning system.
+
+## Planning Model
+
+```text
+Goal
+ ↓
+Project
+ ↓
+Task
+ ↓
+Subtask
