@@ -197,3 +197,23 @@ For intelligent personalization, NEXUS needs to distinguish between:
 
 ```text
 Current Context
+
+---
+
+# 7. `docs/engineering/day-20-engineering-log.md`
+
+```markdown
+# NEXUS — Day 20 Engineering Log
+
+## Objective
+
+Introduce the Predictive Intelligence foundation and establish a measurable architecture for anticipating future productivity outcomes.
+
+---
+
+# Problem
+
+By Day 19, NEXUS could understand:
+
+```text
+What the user is doing
