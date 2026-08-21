@@ -1,30 +1,40 @@
-# NEXUS — Scheduling Engine
+# NEXUS Scheduling Engine
 
-## 1. Overview
+## Overview
 
-The Scheduling Engine transforms tasks and calendar constraints into candidate schedules.
+The NEXUS Scheduling Engine is responsible for transforming executable tasks into a ranked set of recommended actions.
 
-It operates as a recommendation system rather than an autonomous decision-maker.
+The system moves beyond conventional task prioritization by considering multiple contextual signals simultaneously.
+
+Instead of simply asking:
+
+> Which task has the highest priority?
+
+NEXUS asks:
+
+> Which executable task provides the strongest combination of urgency, strategic relevance, effort suitability, and readiness?
 
 ---
 
-## 2. Pipeline
+## Scheduling Pipeline
 
 ```text
-Task Data
-    ↓
-Calendar Data
-    ↓
-Availability Detection
-    ↓
+Goals
+  ↓
+Projects
+  ↓
+Tasks
+  ↓
+Dependencies
+  ↓
 Constraint Evaluation
-    ↓
-Candidate Time Windows
-    ↓
-Schedule Scoring
-    ↓
+  ↓
+Eligible Candidates
+  ↓
+Signal Calculation
+  ↓
+Candidate Scoring
+  ↓
+Ranking
+  ↓
 Recommendation
-    ↓
-Confidence
-    ↓
-User Review
