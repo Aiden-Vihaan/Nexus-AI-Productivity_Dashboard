@@ -1,0 +1,25 @@
+---
+
+# Day 15 — Dependencies & Constraints
+
+```markdown
+# NEXUS — Day 15 Engineering Log
+
+## Objective
+
+Introduce dependency awareness and constraint evaluation so NEXUS can determine which tasks are actually executable.
+
+## Problem
+
+A conventional task manager can identify what work exists.
+
+It cannot necessarily determine what work can currently be performed.
+
+Example:
+
+```text
+Database Design
+      ↓
+Repository Implementation
+      ↓
+API Development
