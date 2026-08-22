@@ -90,3 +90,23 @@ Intelligence Orchestrator
 AI Context Adapter
 AI Tool Interface
 AI Reasoning Runtime
+
+---
+
+# NEXUS — Day 25 Engineering Log
+
+## Objective
+
+Implement the deterministic Recommendation and Decision Engine that determines the strongest next action before AI explanation.
+
+---
+
+# Why This Layer Exists
+
+A central architectural risk in AI productivity applications is allowing the language model to become the entire decision system.
+
+NEXUS deliberately avoids this.
+
+The architecture separates:
+
+Decision
