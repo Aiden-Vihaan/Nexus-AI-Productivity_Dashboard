@@ -110,3 +110,28 @@ NEXUS deliberately avoids this.
 The architecture separates:
 
 Decision
+
+---
+
+# NEXUS — Day 26 Engineering Log
+
+## Objective
+
+Introduce adaptive personalization so that NEXUS can learn productivity-relevant patterns from user behavior.
+
+---
+
+# Previous State
+
+Day 25 established a deterministic decision engine.
+
+```text
+Context
+ ↓
+Candidates
+ ↓
+Scoring
+ ↓
+Ranking
+ ↓
+Decision
