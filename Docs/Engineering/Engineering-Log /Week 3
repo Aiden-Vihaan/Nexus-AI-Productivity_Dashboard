@@ -1,8 +1,5 @@
----
-
 # Day 15 — Dependencies & Constraints
 
-```markdown
 # NEXUS — Day 15 Engineering Log
 
 ## Objective
@@ -17,7 +14,6 @@ It cannot necessarily determine what work can currently be performed.
 
 Example:
 
-```text
 Database Design
       ↓
 Repository Implementation
@@ -26,11 +22,7 @@ API Development
 
 ---
 
-# 4. `docs/engineering/day-16-engineering-log.md`
 
-This is the **main daily engineering log**.
-
-```markdown
 # NEXUS — Day 16 Engineering Log
 
 ## Objective
@@ -83,7 +75,7 @@ Hard constraints eliminate invalid candidates before scoring begins.
 
 Eligible candidates receive normalized values for:
 
-```text
+
 Priority
 Goal Alignment
 Deadline Pressure
@@ -92,11 +84,6 @@ Readiness
 
 ---
 
-# 4. `docs/engineering/day-17-engineering-log.md`
-
-This is the main Day 17 log.
-
-```markdown
 # NEXUS — Day 17 Engineering Log
 
 ## Objective
@@ -124,9 +111,6 @@ Recommended task:
 
 ---
 
-# 5. `docs/engineering/day-18-engineering-log.md`
-
-```markdown
 # NEXUS — Day 18 Engineering Log
 
 ## Objective
@@ -161,7 +145,6 @@ Day 18 introduces the Context Engine.
 
 The Context Engine integrates information from:
 
-```text
 Tasks
 Projects
 Goals
@@ -172,11 +155,8 @@ Activity
 
 ---
 
-# 6. `docs/engineering/day-19-engineering-log.md`
 
-This is the main Day 19 engineering log.
 
-```markdown
 # NEXUS — Day 19 Engineering Log
 
 ## Objective
@@ -195,14 +175,11 @@ It did not yet understand how the user tends to work over time.
 
 For intelligent personalization, NEXUS needs to distinguish between:
 
-```text
 Current Context
 
 ---
 
-# 7. `docs/engineering/day-20-engineering-log.md`
 
-```markdown
 # NEXUS — Day 20 Engineering Log
 
 ## Objective
@@ -215,5 +192,23 @@ Introduce the Predictive Intelligence foundation and establish a measurable arch
 
 By Day 19, NEXUS could understand:
 
-```text
 What the user is doing
+
+---
+
+
+# NEXUS — Day 21 Engineering Log
+
+## Objective
+
+Introduce the Intelligence Orchestration Layer that connects NEXUS's deterministic productivity systems with future AI reasoning.
+
+---
+
+# Problem
+
+By Day 20, NEXUS had:
+Context
+Behavioral Signals
+Predictions
+Risk Signals
