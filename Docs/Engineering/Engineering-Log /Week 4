@@ -1,0 +1,26 @@
+# NEXUS — Day 22 Engineering Log
+
+## Objective
+
+Build the controlled interface through which NEXUS can communicate with AI systems without exposing unrestricted application access.
+
+---
+
+# Problem
+
+Day 21 introduced the Intelligence Orchestrator.
+
+However, a major architectural question remained:
+
+> How should an AI model interact with NEXUS?
+
+A naive implementation would expose application APIs directly to an LLM.
+
+NEXUS deliberately avoids this architecture.
+
+---
+
+# Architecture Decision
+
+The AI receives:
+Structured Context
