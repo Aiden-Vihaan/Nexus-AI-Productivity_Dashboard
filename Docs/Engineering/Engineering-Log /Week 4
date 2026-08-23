@@ -23,6 +23,40 @@ NEXUS deliberately avoids this architecture.
 # NEXUS — Day 23 Engineering Log
 
 ## Objective
+# NEXUS — Day 28 Engineering Log
+
+## Objective
+
+Build production-grade observability, explainability, and decision traceability.
+
+---
+
+# Motivation
+
+NEXUS has now developed:
+
+- Context intelligence
+- Behavioral intelligence
+- Prediction
+- Decision-making
+- Personalization
+- Evaluation
+
+However, an intelligent system that cannot explain or reconstruct its decisions is difficult to debug, evaluate, and trust.
+
+Day 28 introduces an observability layer.
+
+---
+
+# Core Architecture
+
+```text
+Decision
+   ↓
+Decision Trace
+   ├── Explanation
+   ├── Telemetry
+   └── Audit
 
 Implement the AI Reasoning Runtime responsible for executing bounded, structured AI reasoning within the NEXUS architecture.
 
@@ -135,3 +169,38 @@ Scoring
 Ranking
  ↓
 Decision
+
+# NEXUS — Day 28 Engineering Log
+
+## Objective
+
+Build production-grade observability, explainability, and decision traceability.
+
+---
+
+# Motivation
+
+NEXUS has now developed:
+
+- Context intelligence
+- Behavioral intelligence
+- Prediction
+- Decision-making
+- Personalization
+- Evaluation
+
+However, an intelligent system that cannot explain or reconstruct its decisions is difficult to debug, evaluate, and trust.
+
+Day 28 introduces an observability layer.
+
+---
+
+# Core Architecture
+
+```text
+Decision
+   ↓
+Decision Trace
+   ├── Explanation
+   ├── Telemetry
+   └── Audit
