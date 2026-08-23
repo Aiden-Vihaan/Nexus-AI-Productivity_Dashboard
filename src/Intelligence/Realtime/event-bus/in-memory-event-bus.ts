@@ -5,6 +5,7 @@ import {
 
 import { NexusEvent } from "../realtime-types/event";
 import { validateNexusEvent } from "../event-validation/event-validator";
+import { IdempotencyStore } from "../idempotency/idempotency-store";
 
 interface Subscription {
   handler: EventHandler;
@@ -16,15 +17,36 @@ export class InMemoryEventBus implements EventBus {
     Set<Subscription>
   >();
 
+  constructor(
+    private readonly idempotencyStore: IdempotencyStore
+  ) {}
+
   async publish<TPayload>(
     topic: string,
     event: NexusEvent<TPayload>
   ): Promise<void> {
     validateNexusEvent(event);
 
-    const topicSubscribers = this.subscribers.get(topic);
+    const alreadyProcessed =
+      await this.idempotencyStore.hasProcessed(
+        event.eventId
+      );
 
-    if (!topicSubscribers || topicSubscribers.size === 0) {
+    if (alreadyProcessed) {
+      return;
+    }
+
+    const topicSubscribers =
+      this.subscribers.get(topic);
+
+    if (
+      !topicSubscribers ||
+      topicSubscribers.size === 0
+    ) {
+      await this.idempotencyStore.markProcessed(
+        event.eventId
+      );
+
       return;
     }
 
@@ -35,6 +57,10 @@ export class InMemoryEventBus implements EventBus {
         }
       )
     );
+
+    await this.idempotencyStore.markProcessed(
+      event.eventId
+    );
   }
 
   async subscribe<TPayload>(
@@ -42,7 +68,10 @@ export class InMemoryEventBus implements EventBus {
     handler: EventHandler<TPayload>
   ): Promise<() => void> {
     if (!this.subscribers.has(topic)) {
-      this.subscribers.set(topic, new Set());
+      this.subscribers.set(
+        topic,
+        new Set()
+      );
     }
 
     const subscription: Subscription = {
@@ -60,7 +89,11 @@ export class InMemoryEventBus implements EventBus {
     };
   }
 
-  getSubscriberCount(topic: string): number {
-    return this.subscribers.get(topic)?.size ?? 0;
+  getSubscriberCount(
+    topic: string
+  ): number {
+    return (
+      this.subscribers.get(topic)?.size ?? 0
+    );
   }
 }
