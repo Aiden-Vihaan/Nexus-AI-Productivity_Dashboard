@@ -1,5 +1,9 @@
 import { NexusEvent } from "../realtime-types/event";
 
+export type EventHandler<TPayload = unknown> = (
+  event: NexusEvent<TPayload>
+) => Promise<void>;
+
 export interface EventBus {
   publish<TPayload>(
     topic: string,
@@ -8,6 +12,8 @@ export interface EventBus {
 
   subscribe<TPayload>(
     topic: string,
-    handler: (event: NexusEvent<TPayload>) => Promise<void>
-  ): Promise<void>;
+    handler: EventHandler<TPayload>
+  ): Promise<() => void>;
+
+  getSubscriberCount(topic: string): number;
 }
