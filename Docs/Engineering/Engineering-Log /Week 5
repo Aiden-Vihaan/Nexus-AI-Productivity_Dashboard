@@ -1,1 +1,145 @@
+# NEXUS — Day 29 Engineering Log
 
+## Objective
+
+Design and implement the real-time event-driven intelligence pipeline for NEXUS.
+
+---
+
+# Motivation
+
+NEXUS has developed:
+
+- Context intelligence
+- Behavioral intelligence
+- Prediction
+- Decision-making
+- Personalization
+- Evaluation
+- Observability
+
+The next architectural requirement is real-time responsiveness.
+
+A productivity environment changes continuously, so intelligence should be capable of responding to meaningful state changes without relying exclusively on scheduled batch processing.
+
+---
+
+# Day 29 Focus
+
+The real-time architecture introduces:
+
+- Event Bus
+- Event Schema
+- Stream Processors
+- Pipeline Orchestration
+- Context Stream
+- Prediction Stream
+- Decision Stream
+- Latency Management
+- Delivery Guarantees
+- Backpressure Handling
+
+---
+
+# Event Flow
+
+```text
+Event
+  ↓
+Event Bus
+  ↓
+Stream Processor
+  ↓
+State Update
+  ↓
+Derived Event
+  ↓
+Next Intelligence Processor
+```
+
+---
+
+# Core Event Properties
+
+Events contain:
+
+```text
+eventId
+eventType
+eventVersion
+timestamp
+source
+traceId
+entityId
+payload
+metadata
+```
+
+---
+
+# Reliability Model
+
+NEXUS initially uses an at-least-once delivery model.
+
+Consumers must therefore be idempotent.
+
+Failed events may be retried and eventually routed to a Dead Letter Queue.
+
+---
+
+# Latency
+
+Initial engineering targets have been defined for critical intelligence paths.
+
+These are targets for benchmarking and are not presented as measured production performance.
+
+---
+
+# Observability
+
+Real-time processing integrates with the Day 28 observability architecture.
+
+Each event should remain traceable through:
+
+```text
+Event
+ ↓
+Processor
+ ↓
+Decision
+ ↓
+Recommendation
+ ↓
+Outcome
+```
+
+---
+
+# Definition of Done
+
+- [ ] Event schema defined
+- [ ] Event bus abstraction defined
+- [ ] Stream processor abstraction defined
+- [ ] Pipeline orchestration defined
+- [ ] Context stream defined
+- [ ] Prediction stream defined
+- [ ] Decision stream defined
+- [ ] Latency targets documented
+- [ ] Delivery guarantees documented
+- [ ] Retry behavior documented
+- [ ] Dead Letter Queue behavior documented
+- [ ] Backpressure strategy documented
+- [ ] Tests added
+- [ ] Architecture documentation completed
+
+---
+
+# Engineering Principle
+
+Real-time architecture should improve the timeliness of intelligence without sacrificing reliability, explainability, or user control.
+
+---
+
+## Status
+
+Day 29 architecture and engineering documentation completed.
