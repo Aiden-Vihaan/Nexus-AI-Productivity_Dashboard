@@ -143,3 +143,313 @@ Real-time architecture should improve the timeliness of intelligence without sac
 ## Status
 
 Day 29 architecture and engineering documentation completed.
+
+# NEXUS — Day 30 Engineering Log
+
+**Date:** 24 August 2026  
+**Project:** NEXUS AI Productivity Dashboard  
+**Phase:** Real-Time Intelligence  
+**Day:** 30
+
+---
+
+## Objective
+
+The objective of Day 30 was to move the NEXUS real-time architecture from documented design into a functional event infrastructure layer.
+
+Day 29 established the event-driven architecture.
+
+Day 30 introduces the first working implementation of that architecture.
+
+---
+
+## Starting Point
+
+The Day 29 architecture defined:
+
+```text
+Event Sources
+      ↓
+Event Bus
+      ↓
+Stream Processors
+      ↓
+Context
+Prediction
+Personalization
+Decision
+```
+
+The next requirement was to establish a reliable foundation through which those components can communicate.
+
+---
+
+## Implementation
+
+The following components were implemented:
+
+```text
+Event Factory
+Event Validator
+Event Bus Interface
+In-Memory Event Bus
+Idempotency Store
+In-Memory Idempotency Store
+```
+
+---
+
+## Event Factory
+
+The event factory provides a standardized method for creating NEXUS events.
+
+It generates:
+
+```text
+eventId
+timestamp
+traceId
+```
+
+and accepts:
+
+```text
+eventType
+source
+entityId
+payload
+metadata
+eventVersion
+```
+
+This prevents different parts of the system from constructing events inconsistently.
+
+---
+
+## Event Validation
+
+Events are validated before they enter the event bus.
+
+The validator checks the required event contract.
+
+This establishes a fail-fast boundary between application code and the real-time infrastructure.
+
+---
+
+## Event Bus
+
+An event bus abstraction was introduced.
+
+The interface supports:
+
+```text
+publish()
+subscribe()
+getSubscriberCount()
+```
+
+The first implementation is an in-memory event bus.
+
+This implementation is intentionally simple so that event semantics can be tested independently of distributed infrastructure.
+
+---
+
+## Idempotency
+
+An idempotency abstraction was introduced to protect against duplicate event processing.
+
+The current implementation uses an in-memory store.
+
+The event bus checks whether an event has already been processed before delivering it to subscribers.
+
+---
+
+## Duplicate Event Handling
+
+The following scenario is now supported:
+
+```text
+Event A
+   ↓
+Process
+   ↓
+Mark Processed
+
+Event A arrives again
+   ↓
+Idempotency Check
+   ↓
+Already Processed
+   ↓
+Ignore
+```
+
+This establishes the foundation for the at-least-once delivery model defined on Day 29.
+
+---
+
+## Testing
+
+Tests were added for:
+
+```text
+Event Factory
+Event Validation
+Idempotency Store
+Event Bus
+```
+
+Important behaviors tested include:
+
+- Event creation
+- Unique event IDs
+- Trace ID preservation
+- Validation
+- Subscriber delivery
+- Multiple subscribers
+- Unsubscription
+- Duplicate event prevention
+
+---
+
+## Architectural Decision
+
+The event infrastructure remains provider-independent.
+
+The application depends on:
+
+```text
+EventBus
+```
+
+rather than directly depending on:
+
+```text
+Kafka
+Redis
+NATS
+Redpanda
+```
+
+This keeps the intelligence domain decoupled from infrastructure decisions.
+
+---
+
+## Why In-Memory First?
+
+The in-memory implementation is useful for validating the architecture before introducing distributed infrastructure.
+
+It provides:
+
+- Fast development
+- Deterministic tests
+- Minimal infrastructure
+- Easy local debugging
+- Clear event semantics
+
+However, it is not the final production implementation.
+
+---
+
+## Known Limitation
+
+The current idempotency store is in-memory.
+
+Therefore:
+
+```text
+Application Restart
+      ↓
+In-Memory State Lost
+```
+
+A production implementation will require durable idempotency storage.
+
+Similarly, the in-memory event bus does not provide distributed durability or horizontal consumer scaling.
+
+These limitations are intentionally documented rather than hidden.
+
+---
+
+## Engineering Principle
+
+The Day 30 implementation prioritizes correctness of contracts and processing semantics before introducing infrastructure complexity.
+
+---
+
+## Definition of Done
+
+- [x] Event contract implemented
+- [x] Event factory implemented
+- [x] Event validation implemented
+- [x] Event bus interface implemented
+- [x] In-memory event bus implemented
+- [x] Idempotency interface implemented
+- [x] In-memory idempotency store implemented
+- [x] Duplicate event protection implemented
+- [x] Event bus tests added
+- [x] Event factory tests added
+- [x] Validation tests added
+- [x] Idempotency tests added
+- [x] Architecture documentation updated
+- [x] Infrastructure decision documented
+
+---
+
+## Key Outcome
+
+Day 30 establishes the first functional infrastructure layer for NEXUS real-time intelligence.
+
+The architecture has moved from:
+
+```text
+Documented Event Architecture
+```
+
+to:
+
+```text
+Working Event Infrastructure
+```
+
+The current pipeline is:
+
+```text
+Application Event
+      ↓
+Event Factory
+      ↓
+Event Validation
+      ↓
+Event Bus
+      ↓
+Idempotency Check
+      ↓
+Subscribers
+```
+
+---
+
+## Next Engineering Direction
+
+The next phase should focus on connecting this infrastructure to actual intelligence processors.
+
+Future work includes:
+
+- Context event processor
+- Task event processor
+- Prediction processor
+- Decision processor
+- Event persistence
+- Event replay
+- Production event broker adapter
+- Real-time client delivery
+- Performance benchmarking
+
+---
+
+## Status
+
+Day 30 completed.
+
+NEXUS now has a functional provider-independent event infrastructure foundation for the real-time intelligence layer.
