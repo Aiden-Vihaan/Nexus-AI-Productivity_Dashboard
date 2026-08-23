@@ -7,5 +7,5 @@ export interface NexusEvent<TPayload = unknown> {
   traceId: string;
   entityId: string;
   payload: TPayload;
-  metadata?: Record<string, unknown>;
+  metadata: Record<string, unknown>;
 }
