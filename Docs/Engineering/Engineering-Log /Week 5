@@ -542,3 +542,38 @@ Intelligence Processors
 Context Engine
       ↓
 Current Context
+
+---
+
+# NEXUS — Day 34 Engineering Log 
+**Phase:** Decision Intelligence  
+**Focus:** Decision & Intervention Engine
+
+---
+
+## Objective
+
+Build the Decision Engine that transforms predictions into appropriate system decisions.
+
+Day 33 established the Prediction Engine.
+
+The Prediction Engine answers:
+
+> What is likely to happen?
+
+Day 34 establishes the Decision Engine.
+
+The Decision Engine answers:
+
+> What should NEXUS do about it?
+
+---
+
+## Previous Architecture
+
+```text
+Events
+   ↓
+Context
+   ↓
+Predictions
