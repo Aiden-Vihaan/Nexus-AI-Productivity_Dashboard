@@ -475,3 +475,31 @@ Event Factory
 Event Validation
 Event Bus
 Idempotency
+
+---
+
+# NEXUS — Day 32 Engineering Log
+**Phase:** Real-Time Intelligence
+
+---
+
+## Objective
+
+Build the first version of the NEXUS Real-Time Context Engine.
+
+The goal is to transform real-time events into an evolving representation of the user's current working state.
+
+---
+
+## Starting Point
+
+Day 31 introduced:
+
+```text
+Event Infrastructure
+        ↓
+Processor Registry
+        ↓
+Intelligence Processors
+        ↓
+Derived Events
