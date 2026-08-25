@@ -1,0 +1,44 @@
+                         NEXUS
+                           │
+                           ▼
+                  ┌─────────────────┐
+                  │ COMMAND CENTER  │
+                  └────────┬────────┘
+                           │
+                           ▼
+                 ┌──────────────────┐
+                 │ PRESENTATION      │
+                 │ LAYER             │
+                 └────────┬─────────┘
+                          │
+                          ▼
+                 ┌──────────────────┐
+                 │ DASHBOARD STATE  │
+                 └────────┬─────────┘
+                          │
+        ┌─────────────────┼─────────────────┐
+        ▼                 ▼                 ▼
+      TASKS         INTELLIGENCE          MEMORY
+        │                 │                 │
+        │          ┌──────┼──────┐          │
+        │          ▼      ▼      ▼          │
+        │       PREDICT DECIDE INTERVENE    │
+        │          │      │      │          │
+        └──────────┴──────┼──────┴──────────┘
+                          ▼
+                       OUTCOME
+                          │
+                          ▼
+                       LEARNING
+                          │
+                          ▼
+                    PERSONALIZATION
+                          │
+                          ▼
+                    AI ORCHESTRATOR
+                          │
+                          ▼
+                  SEMANTIC INTELLIGENCE
+                          │
+                          ▼
+                    INFRASTRUCTURE
