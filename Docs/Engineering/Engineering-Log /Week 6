@@ -17,3 +17,37 @@ Prediction
 Decision
     ↓
 Intervention
+
+---
+
+# NEXUS — Day 37 Engineering Log
+
+**Phase:** Adaptive Intelligence
+**Focus:** Learning & Adaptation Engine
+
+---
+
+## Objective
+
+Build the Learning & Adaptation Engine responsible for converting accumulated outcome evidence into controlled behavioral adaptations.
+
+---
+
+## Previous Architecture
+
+Day 36 ended with:
+
+```text
+EVENT
+  ↓
+CONTEXT
+  ↓
+PREDICTION
+  ↓
+DECISION
+  ↓
+INTERVENTION
+  ↓
+OUTCOME
+  ↓
+FEEDBACK
