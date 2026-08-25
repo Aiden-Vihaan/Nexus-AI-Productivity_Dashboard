@@ -1,1 +1,19 @@
+# NEXUS — Day 36 Engineering Log
 
+**Phase:** Closed-Loop Intelligence
+**Focus:** Outcome & Feedback Engine
+
+---
+
+## Objective
+
+Build the Outcome & Feedback Engine responsible for evaluating what happens after NEXUS delivers an intervention.
+
+Day 35 established:
+
+```text
+Prediction
+    ↓
+Decision
+    ↓
+Intervention
